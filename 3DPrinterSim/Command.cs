@@ -10,8 +10,11 @@ namespace _3DPrinterSim
     class Command
     {
         public double z_layer { get; set; }
+
         public double x_coordinate { get; set; }
+
         public double y_coordinate { get; set; }
+
         public bool laser_state { get; set; }
     }
 }
