@@ -8,6 +8,9 @@ namespace _3DPrinterSim
 {
     class Parse
     {
-
+        //Open Method
+        //Close Method
+        //Filestream saved to property
+        //ParseNextCommand Method
     }
 }
