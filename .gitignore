@@ -4,3 +4,8 @@
 
 /3DPrinterSim/.vs/3DPrinterSim/v15
 /3DPrinterSim/obj/Debug
+/3DPrinterSim/packages/OpenTK.2.0.0/content/OpenTK.dll.config
+/3DPrinterSim/packages/OpenTK.2.0.0/lib/net20/OpenTK.dll
+/3DPrinterSim/packages/OpenTK.2.0.0/lib/net20/OpenTK.xml
+/3DPrinterSim/packages/OpenTK.2.0.0/OpenTK.2.0.0.nupkg
+/Firmware/obj/Debug/Firmware.csproj.FileListAbsolute.txt
