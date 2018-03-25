@@ -9,34 +9,49 @@ namespace _3DPrinterSim
 {
     public class PrinterParser
     {
+        //datamemeber fileStream
         //Open Method
         //Close Method
-        //Filestream saved to property
-        //ParseNextCommand Method
+        //ParseContents Method
 
-            public List<PrinterCommand> Parse(string path)
+        //get the file from user with openfiledialog 
+        //pass filepath to Openfile (opens file stream)
+        //Call ParseContents on file contents
+        //ParseContents returns list of printerCommand objects ready for translation to Firmware Packets
+        //if file is done or canceled call close method
+
+        public StreamReader fileStream;
+        public void OpenFile(string filepath)
         {
-            //get the file from user with openfiledialog 
-            //
-            //return ParseContents(file.contents());
-            return ParseContents(File.ReadAllText(path));
+            fileStream = new StreamReader(filepath);
+            ParseContents();
+        }
+        public void CloseFile()
+        {
+            fileStream.Close();
         }
 
-        private List<PrinterCommand> ParseContents(string fileContents)
+        private List<PrinterCommand> ParseContents()
         {
             var printerCommands = new List<PrinterCommand>();
-            var lines = fileContents.Split('\n');
-            foreach (var line in lines)
+
+            string line;
+
+            while ((line = fileStream.ReadLine()) != null)
             {
-                if (line[0] != 'G')
-                {
-                    continue;
-                }
+                if (line[0] != 'G') continue;
+
                 string[] splitLine = line.Split(null);
                 PrinterCommand individualCommand = new PrinterCommand();
+                individualCommand.g_command = double.MaxValue;
+                individualCommand.z_layer = double.MaxValue;
+                individualCommand.x_coordinate = double.MaxValue;
+                individualCommand.y_coordinate = double.MaxValue;
+                individualCommand.x_coordinate = double.MaxValue;
+                individualCommand.isLaserOn = false;
+
                 foreach (var part in splitLine)
                 {
-                    
                     char firstChar = part[0];
                     switch (firstChar)
                     {
@@ -62,15 +77,10 @@ namespace _3DPrinterSim
                                 individualCommand.isLaserOn = false;
                             }
                             break;
-                            
                     }
                     printerCommands.Add(individualCommand);
                 }
-
-
             }
-
-
             return printerCommands;
         }
     }
