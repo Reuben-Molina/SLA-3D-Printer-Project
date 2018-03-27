@@ -85,7 +85,7 @@ namespace PrinterSimulator
                 Console.Clear();
                 Console.WriteLine("3D Printer Simulation - Control Menu\n");
                 Console.WriteLine("P - Print");
-                Console.WriteLine("T - Test");
+                Console.WriteLine("T - Test GCODE");
                 Console.WriteLine("Q - Quit");
 
                 char ch = Char.ToUpper(Console.ReadKey().KeyChar);
@@ -100,7 +100,9 @@ namespace PrinterSimulator
                         List<PrinterCommand> FileContents = PrinterParser.ParseContents();
                         for(int i = 0; i < 15; i++)
                         {
-                            Console.WriteLine("Line:" + i);
+                            //Console.WriteLine(FileContents[i].x_coordinate);
+                            //Console.WriteLine(FileContents[i].y_coordinate);
+                            //Console.WriteLine("Line:" + i);
                             if (FileContents[i].g_command != double.MaxValue)
                             { Console.WriteLine("Command: " + FileContents[i].g_command); }
 
@@ -112,6 +114,7 @@ namespace PrinterSimulator
                             { Console.WriteLine("Z: " + FileContents[i].z_layer); }
                             if (FileContents[i].isLaserOn == true)
                             { Console.WriteLine("Is Laser On? " + FileContents[i].isLaserOn); }
+                            Console.WriteLine("");
                              
                         }
                         Console.ReadLine();

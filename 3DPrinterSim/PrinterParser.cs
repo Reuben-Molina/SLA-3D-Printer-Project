@@ -86,8 +86,9 @@ namespace _3DPrinterSim
                             }
                             break;
                     }
-                    printerCommands.Add(individualCommand);
+                    
                 }
+                printerCommands.Add(individualCommand);
             }
             return printerCommands;
         }
