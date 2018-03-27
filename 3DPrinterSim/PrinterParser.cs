@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using _3DPrinterSim;
 
 namespace _3DPrinterSim
 {
@@ -13,6 +14,7 @@ namespace _3DPrinterSim
         //Open Method
         //Close Method
         //ParseContents Method
+        //Test file from main menu
 
         //get the file from user with openfiledialog 
         //pass filepath to Openfile (opens file stream)
@@ -20,26 +22,29 @@ namespace _3DPrinterSim
         //ParseContents returns list of printerCommand objects ready for translation to Firmware Packets
         //if file is done or canceled call close method
 
-        public StreamReader fileStream;
-        public void OpenFile(string filepath)
+        public static StreamReader FileStream;
+
+        public static void OpenFile(string filepath)
         {
-            fileStream = new StreamReader(filepath);
-            ParseContents();
+
+
+            FileStream = new StreamReader(filepath);
         }
-        public void CloseFile()
+        public static void CloseFile()
         {
-            fileStream.Close();
+            FileStream.Close();
         }
 
-        private List<PrinterCommand> ParseContents()
+        public static List<PrinterCommand> ParseContents()
         {
             var printerCommands = new List<PrinterCommand>();
 
             string line;
 
-            while ((line = fileStream.ReadLine()) != null)
+            while ((line = FileStream.ReadLine()) != null)
             {
-                if (line[0] != 'G') continue;
+                //Console.WriteLine(line);
+                if (string.IsNullOrWhiteSpace(line) || line.First() != 'G') continue;
 
                 string[] splitLine = line.Split(null);
                 PrinterCommand individualCommand = new PrinterCommand();
@@ -49,12 +54,15 @@ namespace _3DPrinterSim
                 individualCommand.y_coordinate = double.MaxValue;
                 individualCommand.x_coordinate = double.MaxValue;
                 individualCommand.isLaserOn = false;
-
                 foreach (var part in splitLine)
                 {
+                    if (part.Contains(';')) break;
+                    if (string.IsNullOrEmpty(part)) continue;
+                   
                     char firstChar = part[0];
+                   
                     switch (firstChar)
-                    {
+                    { 
                         case 'G':
                             individualCommand.g_command = Convert.ToDouble(part.Substring(1));
                             break;
@@ -74,7 +82,7 @@ namespace _3DPrinterSim
                             }
                             else
                             {
-                                individualCommand.isLaserOn = false;
+                                //individualCommand.isLaserOn = false;
                             }
                             break;
                     }

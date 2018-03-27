@@ -14,12 +14,13 @@ using System.Diagnostics;
 using Hardware;
 using Firmware;
 using System.IO;
+using _3DPrinterSim;
 
 namespace PrinterSimulator
 {
     class PrintSim
     {
-        private System.IO.StreamReader file = new System.IO.StreamReader("..\\..\\..\\SampleSTLs\\F-35_Corrected.gcode");
+        public System.IO.StreamReader file = new System.IO.StreamReader("..\\..\\..\\SampleSTLs\\F-35_Corrected.gcode");
 
         
         static void PrintFile(PrinterControl simCtl)
@@ -28,8 +29,9 @@ namespace PrinterSimulator
 
             Stopwatch swTimer = new Stopwatch();
             swTimer.Start();
-
-            // Todo - Read GCODE file and send data to firmware for printing
+            
+           
+           
 
             swTimer.Stop();
             long elapsedMS = swTimer.ElapsedMilliseconds;
@@ -38,18 +40,7 @@ namespace PrinterSimulator
             Console.WriteLine("Press any key to continue");
             Console.ReadKey();
         }
-        protected bool ParseGCODEFile(StreamReader file)
-        {
 
-            string line = file.ReadLine();
-            while (line != null)
-            {
-
-                line = file.ReadLine();
-            }
-
-            return false;
-        }
 
         static void UnloadFile(PrintSim file)
 
@@ -105,6 +96,25 @@ namespace PrinterSimulator
                         break;
 
                     case 'T': // Test menu
+                        PrinterParser.OpenFile("C:\\Users\\User\\Documents\\GitKraken\\SLAPrintingProject\\SLA-3D-Printer-Project\\SampleSTLs\\F-35_Corrected.gcode");
+                        List<PrinterCommand> FileContents = PrinterParser.ParseContents();
+                        for(int i = 0; i < 15; i++)
+                        {
+                            Console.WriteLine("Line:" + i);
+                            if (FileContents[i].g_command != double.MaxValue)
+                            { Console.WriteLine("Command: " + FileContents[i].g_command); }
+
+                            if (FileContents[i].x_coordinate != double.MaxValue)
+                            { Console.WriteLine("X: " + FileContents[i].x_coordinate); }
+                            if (FileContents[i].y_coordinate != double.MaxValue)
+                            { Console.WriteLine("Y: " + FileContents[i].y_coordinate); }
+                            if (FileContents[i].z_layer != double.MaxValue)
+                            { Console.WriteLine("Z: " + FileContents[i].z_layer); }
+                            if (FileContents[i].isLaserOn == true)
+                            { Console.WriteLine("Is Laser On? " + FileContents[i].isLaserOn); }
+                             
+                        }
+                        Console.ReadLine();
                         break;
 
                     case 'Q' :  // Quit
@@ -112,6 +122,7 @@ namespace PrinterSimulator
                         firmware.Stop();
                         fDone = true;
                         break;
+
                 }
 
             }

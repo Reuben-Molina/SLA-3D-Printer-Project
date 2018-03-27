@@ -9,3 +9,7 @@
 /3DPrinterSim/packages/OpenTK.2.0.0/lib/net20/OpenTK.xml
 /3DPrinterSim/packages/OpenTK.2.0.0/OpenTK.2.0.0.nupkg
 /Firmware/obj/Debug/Firmware.csproj.FileListAbsolute.txt
+/Firmware/obj/Debug
+/Firmware/bin/Debug
+/3DPrinterSim/Properties
+/3DPrinterSim/bin/Debug
