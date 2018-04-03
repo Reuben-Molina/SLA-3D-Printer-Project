@@ -95,28 +95,55 @@ namespace PrinterSimulator
                         PrintFile(printer.GetPrinterSim());
                         break;
 
-                    case 'T': // Test menu
+                    case 'T': // Test GCODE
                         PrinterParser.OpenFile("C:\\Users\\User\\Documents\\GitKraken\\SLAPrintingProject\\SLA-3D-Printer-Project\\SampleSTLs\\F-35_Corrected.gcode");
                         List<PrinterCommand> FileContents = PrinterParser.ParseContents();
-                        for(int i = 0; i < 15; i++)
+                        double max_x_coordinate = 0.0;
+                        double max_y_coordinate = 0.0;
+                        double max_z_layer = 0.0;
+                        for (int i = 0; i < FileContents.Count(); i++)
                         {
                             //Console.WriteLine(FileContents[i].x_coordinate);
                             //Console.WriteLine(FileContents[i].y_coordinate);
                             //Console.WriteLine("Line:" + i);
+                            
+                            
+
                             if (FileContents[i].g_command != double.MaxValue)
                             { Console.WriteLine("Command: " + FileContents[i].g_command); }
-
                             if (FileContents[i].x_coordinate != double.MaxValue)
-                            { Console.WriteLine("X: " + FileContents[i].x_coordinate); }
+                            {   
+                                if (FileContents[i].x_coordinate > max_x_coordinate)
+                                {
+                                    max_x_coordinate = FileContents[i].x_coordinate;
+                                }
+                                Console.WriteLine("X: " + FileContents[i].x_coordinate); }
                             if (FileContents[i].y_coordinate != double.MaxValue)
-                            { Console.WriteLine("Y: " + FileContents[i].y_coordinate); }
+                            {
+                                if (FileContents[i].y_coordinate > max_y_coordinate)
+                                {
+                                    max_y_coordinate = FileContents[i].y_coordinate;
+                                }
+                                Console.WriteLine("Y: " + FileContents[i].y_coordinate); }
                             if (FileContents[i].z_layer != double.MaxValue)
-                            { Console.WriteLine("Z: " + FileContents[i].z_layer); }
-                            if (FileContents[i].isLaserOn == true)
-                            { Console.WriteLine("Is Laser On? " + FileContents[i].isLaserOn); }
+                            {
+                                if (FileContents[i].z_layer > max_z_layer)
+                                {
+                                    max_z_layer = FileContents[i].z_layer;
+                                }
+                                Console.WriteLine("Z: " + FileContents[i].z_layer); }
+                            //if (FileContents[i].isLaserOn == true)
+                            //{ Console.WriteLine("Is Laser On? " + FileContents[i].isLaserOn); }
+                            Console.WriteLine("Is Laser On? " + FileContents[i].isLaserOn);
                             Console.WriteLine("");
                              
                         }
+                        Console.WriteLine("Max x coordinate: " + max_x_coordinate);
+                        Console.WriteLine("");
+                        Console.WriteLine("Max y coordinate: " + max_y_coordinate);
+                        Console.WriteLine("");
+                        Console.WriteLine("Max z layer: " + max_z_layer);
+                        Console.WriteLine("");
                         Console.ReadLine();
                         break;
 

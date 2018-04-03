@@ -80,10 +80,6 @@ namespace _3DPrinterSim
                             {
                                 individualCommand.isLaserOn = true;
                             }
-                            else
-                            {
-                                //individualCommand.isLaserOn = false;
-                            }
                             break;
                     }
                     
