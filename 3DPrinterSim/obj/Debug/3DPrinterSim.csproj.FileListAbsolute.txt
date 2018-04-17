@@ -11,3 +11,15 @@ C:\Users\User\Documents\GitKraken\SLAPrintingProject - Copy\New Project\3DPrinte
 C:\Users\User\Documents\GitKraken\SLAPrintingProject - Copy\New Project\3DPrinterSim\obj\Debug\3DPrinterSim.csproj.CopyComplete
 C:\Users\User\Documents\GitKraken\SLAPrintingProject - Copy\New Project\3DPrinterSim\obj\Debug\3DPrinterSim.exe
 C:\Users\User\Documents\GitKraken\SLAPrintingProject - Copy\New Project\3DPrinterSim\obj\Debug\3DPrinterSim.pdb
+C:\Users\reube\Desktop\SoftWare Engineering\GitProject\SLA-3D-Printer-Project\3DPrinterSim\bin\Debug\3DPrinterSim.exe.config
+C:\Users\reube\Desktop\SoftWare Engineering\GitProject\SLA-3D-Printer-Project\3DPrinterSim\bin\Debug\3DPrinterSim.exe
+C:\Users\reube\Desktop\SoftWare Engineering\GitProject\SLA-3D-Printer-Project\3DPrinterSim\bin\Debug\3DPrinterSim.pdb
+C:\Users\reube\Desktop\SoftWare Engineering\GitProject\SLA-3D-Printer-Project\3DPrinterSim\bin\Debug\Firmware.dll
+C:\Users\reube\Desktop\SoftWare Engineering\GitProject\SLA-3D-Printer-Project\3DPrinterSim\bin\Debug\Hardware.dll
+C:\Users\reube\Desktop\SoftWare Engineering\GitProject\SLA-3D-Printer-Project\3DPrinterSim\bin\Debug\Firmware.pdb
+C:\Users\reube\Desktop\SoftWare Engineering\GitProject\SLA-3D-Printer-Project\3DPrinterSim\bin\Debug\OpenTK.xml
+C:\Users\reube\Desktop\SoftWare Engineering\GitProject\SLA-3D-Printer-Project\3DPrinterSim\obj\Debug\3DPrinterSim.csprojResolveAssemblyReference.cache
+C:\Users\reube\Desktop\SoftWare Engineering\GitProject\SLA-3D-Printer-Project\3DPrinterSim\obj\Debug\3DPrinterSim.csproj.CoreCompileInputs.cache
+C:\Users\reube\Desktop\SoftWare Engineering\GitProject\SLA-3D-Printer-Project\3DPrinterSim\obj\Debug\3DPrinterSim.csproj.CopyComplete
+C:\Users\reube\Desktop\SoftWare Engineering\GitProject\SLA-3D-Printer-Project\3DPrinterSim\obj\Debug\3DPrinterSim.exe
+C:\Users\reube\Desktop\SoftWare Engineering\GitProject\SLA-3D-Printer-Project\3DPrinterSim\obj\Debug\3DPrinterSim.pdb

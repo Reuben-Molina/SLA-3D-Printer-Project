@@ -6,3 +6,11 @@ C:\Users\User\Documents\GitKraken\SLAPrintingProject - Copy\New Project\Firmware
 C:\Users\User\Documents\GitKraken\SLAPrintingProject - Copy\New Project\Firmware\obj\Debug\Firmware.csproj.CopyComplete
 C:\Users\User\Documents\GitKraken\SLAPrintingProject - Copy\New Project\Firmware\obj\Debug\Firmware.dll
 C:\Users\User\Documents\GitKraken\SLAPrintingProject - Copy\New Project\Firmware\obj\Debug\Firmware.pdb
+C:\Users\reube\Desktop\SoftWare Engineering\GitProject\SLA-3D-Printer-Project\Firmware\bin\Debug\Firmware.dll
+C:\Users\reube\Desktop\SoftWare Engineering\GitProject\SLA-3D-Printer-Project\Firmware\bin\Debug\Firmware.pdb
+C:\Users\reube\Desktop\SoftWare Engineering\GitProject\SLA-3D-Printer-Project\Firmware\bin\Debug\Hardware.dll
+C:\Users\reube\Desktop\SoftWare Engineering\GitProject\SLA-3D-Printer-Project\Firmware\obj\Debug\Firmware.csprojResolveAssemblyReference.cache
+C:\Users\reube\Desktop\SoftWare Engineering\GitProject\SLA-3D-Printer-Project\Firmware\obj\Debug\Firmware.csproj.CoreCompileInputs.cache
+C:\Users\reube\Desktop\SoftWare Engineering\GitProject\SLA-3D-Printer-Project\Firmware\obj\Debug\Firmware.csproj.CopyComplete
+C:\Users\reube\Desktop\SoftWare Engineering\GitProject\SLA-3D-Printer-Project\Firmware\obj\Debug\Firmware.dll
+C:\Users\reube\Desktop\SoftWare Engineering\GitProject\SLA-3D-Printer-Project\Firmware\obj\Debug\Firmware.pdb

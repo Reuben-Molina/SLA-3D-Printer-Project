@@ -23,15 +23,13 @@ namespace PrinterSimulator
         public System.IO.StreamReader file = new System.IO.StreamReader("..\\..\\..\\SampleSTLs\\F-35_Corrected.gcode");
 
         
-        static void PrintFile(PrinterControl simCtl)
+        static void PrintFile(PrinterControl simCtl, PrinterThread printer)
         {
          
 
             Stopwatch swTimer = new Stopwatch();
             swTimer.Start();
             
-           
-           
 
             swTimer.Stop();
             long elapsedMS = swTimer.ElapsedMilliseconds;
@@ -39,14 +37,7 @@ namespace PrinterSimulator
             Console.WriteLine("Total Print Time: {0}", elapsedMS / 1000.0);
             Console.WriteLine("Press any key to continue");
             Console.ReadKey();
-        }
-
-
-        static void UnloadFile(PrintSim file)
-
-        {
-            file = null;
-        }
+        } 
 
         [STAThread]
 
@@ -92,7 +83,7 @@ namespace PrinterSimulator
                 switch (ch)
                 {
                     case 'P': // Print
-                        PrintFile(printer.GetPrinterSim());
+                        PrintFile(printer.GetPrinterSim(), printer);
                         break;
 
                     case 'T': // Test GCODE
