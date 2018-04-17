@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HostCP.cs" />
     <Compile Include="PrinterCommand.cs" />
     <Compile Include="PrinterParser.cs" />
     <Compile Include="Program.cs" />
